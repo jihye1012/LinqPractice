@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,27 @@ namespace LinqPractice
             foreach (var item in output)
             {
                 Console.WriteLine(item);
+            }
+            int[] output3=output2.ToArray();
+            List<int> output4 = output2.ToList();
+
+            //익명객체 실습
+
+            var output5=from item in input
+                where item %2==0
+                select new
+                {
+                    A = item * 2,
+                    B = item * item,
+                    C = 100
+                };
+            foreach (var item in output5)
+            {
+                Console.WriteLine(item.A);
+                Console.WriteLine(item.B);
+                Console.WriteLine(item.C);
+                Console.WriteLine();
+
             }
         }
     }
