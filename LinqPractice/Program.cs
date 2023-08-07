@@ -53,6 +53,26 @@ namespace LinqPractice
                 Console.WriteLine();
 
             }
+            List<product> foods = new List<product>()
+            {
+                new product() { Name="군고구마", Price=1000},
+                new product() { Name="사과", Price=2000},
+                new product() { Name="바나나", Price=3000},
+                new product() { Name="배", Price=1500},
+                new product() { Name="감자", Price=500},
+                new product() { Name="토마토", Price=500},
+                new product() { Name="옥수수", Price=1000},
+                new product() { Name="자두", Price=2000}
+            };
+
+            var output6 = from food in foods
+                          where food.Price > 1500
+                          orderby food.Price ascending
+                          select food;
+            foreach (var item in output6)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
