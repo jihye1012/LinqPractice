@@ -23,7 +23,14 @@ namespace LinqPractice
             {
                 Console.WriteLine(item);
             }
-
+            var output2=from item in input
+                        where item % 2 == 0
+                        orderby item descending
+                        select item;
+            foreach (var item in output)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
